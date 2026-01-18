@@ -28,7 +28,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Set baseurl
-        run: echo "BASEURL=${{ vars.PAGES_BASEURL || '' }}" >> $GITHUB_ENV
+        run: |
+          # shellcheck disable=SC2086
+          echo "BASEURL=\"${{ vars.PAGES_BASEURL || '' }}\"" >> $GITHUB_ENV
       - name: Build with Jekyll
         run: |
           if [ -z "$BASEURL" ]; then
@@ -49,5 +51,9 @@ jobs:
     needs: build
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
+        id: deploy-step
         uses: actions/deploy-pages@v4
+      - name: Output deployment URL
+        uses: actions/github-script@v7
+        with:
+          script: "console.log('Site deployed to: ${{ steps.deploy-step.outputs.page_url }}')"
