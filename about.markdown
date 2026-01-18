@@ -15,4 +15,4 @@ I work on various projects and enjoy sharing my thoughts through writing. This s
 - Open source software
 - Learning new technologies
 
-Feel free to check out my [blog](/blog/) for updates and thoughts.
+Feel free to check out my [blog]({{ '/blog/' | relative_url }}) for updates and thoughts.
