@@ -1,0 +1,180 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Gist Labs Custom Styling */
+
+/* Color Variables from gistlabs.com */
+:root {
+  --gist-dark: #26262c;
+  --gist-primary: #0693e3;
+  --gist-accent: #00d084;
+  --gist-text: #32373c;
+  --gist-light-bg: #ffffff;
+  --gist-gray: #abb8c3;
+}
+
+/* Typography - Using fonts from gistlabs.com */
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--gist-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;
+  color: var(--gist-dark);
+}
+
+.site-title {
+  font-family: 'Heebo', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 500;
+}
+
+/* Header Styling */
+.site-header {
+  border-top: none;
+  border-bottom: 1px solid #e8e8e8;
+  background-color: var(--gist-light-bg);
+}
+
+/* Logo */
+.site-header .wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.site-title::before {
+  content: '';
+  display: inline-block;
+  width: 150px;
+  height: 52px;
+  background-image: url('/assets/gist-labs-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+/* Links */
+a {
+  color: var(--gist-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--gist-accent);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--gist-primary);
+}
+
+/* Navigation */
+.site-nav .page-link {
+  color: var(--gist-text);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.site-nav .page-link:hover {
+  color: var(--gist-primary);
+}
+
+/* Buttons and CTAs */
+.button, 
+button,
+input[type="submit"],
+input[type="button"] {
+  background-color: var(--gist-primary);
+  color: var(--gist-light-bg);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: var(--gist-accent);
+  text-decoration: none;
+}
+
+/* Post and Content Styling */
+.post-title,
+.page-heading {
+  color: var(--gist-dark);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.post-meta {
+  color: var(--gist-gray);
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #e8e8e8;
+  background-color: #f9f9f9;
+  color: var(--gist-text);
+}
+
+.footer-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--gist-dark);
+}
+
+/* Code Blocks */
+pre,
+code {
+  background-color: #f6f8fa;
+  border: 1px solid #e1e4e8;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--gist-primary);
+  color: var(--gist-text);
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+}
+
+table th {
+  background-color: var(--gist-dark);
+  color: var(--gist-light-bg);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+table td,
+table th {
+  border: 1px solid #e8e8e8;
+  padding: 0.5rem 1rem;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 800px) {
+  .site-title::before {
+    width: 100px;
+    height: 35px;
+    margin-right: 10px;
+  }
+}

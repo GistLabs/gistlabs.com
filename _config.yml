@@ -13,12 +13,14 @@
 # https://learnxinyminutes.com/docs/yaml/
 #
 # Site settings
-title: GistLabs
-email: your-email@gistlabs.com
+title: Gist Labs
+email: john@gistlabs.com
 description: >-
-  Personal website and blog by John
-twitter_username: 
-github_username: john
+  We Get To The Source Of People, Process, And Technology.
+  World-class, deep consulting into the most important aspects of your Strategy, Deliver, and Technology.
+twitter_username: jheintz
+github_username: jheintz
+google_analytics: G-XXXXXXXXXX
 
 # Build settings
 theme: minima
