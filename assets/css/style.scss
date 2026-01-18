@@ -44,6 +44,15 @@ h1, h2, h3, h4, h5, h6 {
 .site-header .wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.site-title {
+  margin-right: 2rem;
+}
+
+.site-nav {
+  margin-left: auto;
 }
 
 .site-title::before {
@@ -177,4 +186,64 @@ table tr:nth-child(even) {
     height: 35px;
     margin-right: 10px;
   }
+}
+
+/* Client Logos */
+.client-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem 1rem;
+  margin: 2rem 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.client-logos img {
+  max-width: 150px;
+  max-height: 100px;
+  object-fit: contain;
+  flex: 0 1 auto;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.services-grid > div {
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.services-grid > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.services-grid h3 {
+  margin-top: 0;
+}
+
+.services-grid p {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Service Icons */
+h3 i {
+  color: var(--gist-primary);
+  margin-right: 0.5rem;
 }
