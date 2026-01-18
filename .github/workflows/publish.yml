@@ -27,13 +27,10 @@ jobs:
           bundler: '2.6.9'
           bundler-cache: true
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v4
         with:
           enablement: true
-      - name: Set baseurl
-        run: |
-          # shellcheck disable=SC2086
-          echo "BASEURL=\"${{ vars.PAGES_BASEURL || '' }}\"" >> $GITHUB_ENV
       - name: Install Ruby gems
         run: |
           gem install bundler -v 2.6.9 || true
@@ -41,12 +38,8 @@ jobs:
           bundle install --jobs 4 --retry 3
       - name: Build with Jekyll
         run: |
-          if [ -z "$BASEURL" ]; then
-            echo "PAGES_BASEURL not set, using default (empty). For project pages, set repository variable PAGES_BASEURL to '/repo-name'"
-            bundle exec jekyll build
-          else
-            bundle exec jekyll build --baseurl "$BASEURL"
-          fi
+          echo "Base path from configure-pages: ${{ steps.pages.outputs.base_path }}"
+          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact

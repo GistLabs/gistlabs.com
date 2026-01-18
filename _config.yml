@@ -17,8 +17,6 @@ title: GistLabs
 email: your-email@gistlabs.com
 description: >-
   Personal website and blog by John
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
 twitter_username: 
 github_username: john
 
@@ -27,11 +25,6 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-relative-links
-
-jekyll-relative-links:
-  enabled: true
-  collections: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
