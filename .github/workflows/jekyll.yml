@@ -27,13 +27,15 @@ jobs:
           bundler-cache: true
       - name: Setup Pages
         uses: actions/configure-pages@v4
+      - name: Set baseurl
+        run: echo "BASEURL=${{ vars.PAGES_BASEURL || '' }}" >> $GITHUB_ENV
       - name: Build with Jekyll
         run: |
-          if [ -z "${{ vars.PAGES_BASEURL }}" ]; then
+          if [ -z "$BASEURL" ]; then
             echo "PAGES_BASEURL not set, using default (empty). For project pages, set repository variable PAGES_BASEURL to '/repo-name'"
             bundle exec jekyll build
           else
-            bundle exec jekyll build --baseurl "${{ vars.PAGES_BASEURL }}"
+            bundle exec jekyll build --baseurl "$BASEURL"
           fi
         env:
           JEKYLL_ENV: production
