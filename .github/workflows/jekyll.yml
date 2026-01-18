@@ -24,7 +24,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-version: '2.6'
+          bundler: '2.6.9'
+          bundler-cache: true
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
@@ -33,6 +34,11 @@ jobs:
         run: |
           # shellcheck disable=SC2086
           echo "BASEURL=\"${{ vars.PAGES_BASEURL || '' }}\"" >> $GITHUB_ENV
+      - name: Install Ruby gems
+        run: |
+          gem install bundler -v 2.6.9 || true
+          bundle config set path vendor/bundle
+          bundle install --jobs 4 --retry 3
       - name: Build with Jekyll
         run: |
           if [ -z "$BASEURL" ]; then
