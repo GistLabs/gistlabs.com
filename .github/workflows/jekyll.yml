@@ -27,6 +27,8 @@ jobs:
           bundler-version: '2.6'
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        with:
+          enablement: true
       - name: Set baseurl
         run: |
           # shellcheck disable=SC2086
