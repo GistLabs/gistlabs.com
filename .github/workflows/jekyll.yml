@@ -29,12 +29,12 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
         run: |
-          BASEURL="${{ vars.PAGES_BASEURL }}"
-          if [ -z "$BASEURL" ]; then
+          if [ -z "${{ vars.PAGES_BASEURL }}" ]; then
             echo "PAGES_BASEURL not set, using default (empty). For project pages, set repository variable PAGES_BASEURL to '/repo-name'"
-            BASEURL=""
+            bundle exec jekyll build
+          else
+            bundle exec jekyll build --baseurl "${{ vars.PAGES_BASEURL }}"
           fi
-          bundle exec jekyll build --baseurl "$BASEURL"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
