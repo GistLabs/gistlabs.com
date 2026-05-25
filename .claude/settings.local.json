@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:gistlabs.com)",
+      "Bash(xargs ls -la)",
+      "Bash(rm /Users/john/dev/gistlabs.com/_includes/head.html /Users/john/dev/gistlabs.com/Gemfile.lock /Users/john/dev/gistlabs.com/assets/css/style.scss)",
+      "Bash(sed -i '' 's/^layout: post$/layout: single/' /Users/john/dev/gistlabs.com/_posts/*.markdown)",
+      "Bash(bundle install *)",
+      "Bash(xcode-select -p)",
+      "Bash(clang --version)",
+      "Bash(rbenv versions *)",
+      "Bash(chmod +x /Users/john/dev/gistlabs.com/serve)",
+      "Bash(./serve)",
+      "Bash(bundle exec *)",
+      "Bash(find ~/.rbenv -name \"archive-single.html\" 2>/dev/null | grep minimal-mistakes | head -3)",
+      "Read(//Users/john/.rbenv/**)"
+    ]
+  }
+}

@@ -1,0 +1,147 @@
+---
+---
+@charset "utf-8";
+
+/* Brand colors — set before import so they override MM's !default values */
+$primary-color: #0693e3;
+$link-color: #0693e3;
+$footer-background-color: #26262c;
+$text-color: #32373c;
+$muted-text-color: #abb8c3;
+$masthead-link-color: #32373c;
+$masthead-link-color-hover: #0693e3;
+
+/* Brand fonts */
+$global-font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$header-font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+@import "minimal-mistakes";
+
+/* ── Hero ── */
+.page__hero--overlay {
+  padding: 6em 0;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+}
+
+.page__hero--overlay .page__title {
+  font-size: 2.4em;
+  font-weight: 700;
+  color: #fff;
+}
+
+.page__hero--overlay .page__lead {
+  font-size: 1.25em;
+  color: rgba(255,255,255,0.9);
+}
+
+/* ── Services feature row ── */
+.feature__wrapper {
+  margin: 2em 0;
+  border-bottom: none;
+}
+
+.feature__item .archive__item-title {
+  font-size: 1.1em;
+}
+
+/* ── Client logos ── */
+.client-logos {
+  text-align: center;
+  padding: 2.5em 0;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  margin: 2em 0;
+}
+
+.client-logos h2 {
+  font-size: 1.4em;
+  margin-bottom: 0.25em;
+}
+
+.client-logos p {
+  color: $muted-text-color;
+  margin-bottom: 1.5em;
+}
+
+.client-logos .logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.client-logos img {
+  max-width: 130px;
+  max-height: 70px;
+  object-fit: contain;
+  filter: grayscale(30%);
+  opacity: 0.8;
+  transition: opacity 0.2s, filter 0.2s;
+}
+
+.client-logos img:hover {
+  opacity: 1;
+  filter: none;
+}
+
+/* ── Recent posts on home page ── */
+.recent-posts {
+  padding: 2em 0;
+}
+
+.recent-posts h2 {
+  font-size: 1.4em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid $primary-color;
+  padding-bottom: 0.4em;
+  display: inline-block;
+}
+
+/* ── Archive list rows: image left, text right ── */
+.list__item .archive__item {
+  display: flex;
+  gap: 1.25em;
+  align-items: flex-start;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.list__item .archive__item-teaser {
+  flex: 0 0 180px;
+  width: 180px;
+}
+
+.list__item .archive__item-teaser img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.list__item .archive__item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.list__item .archive__item-title {
+  margin-top: 0;
+  font-size: 1.1em;
+}
+
+@media (max-width: 600px) {
+  .list__item .archive__item {
+    flex-direction: column;
+  }
+  .list__item .archive__item-teaser {
+    width: 100%;
+    flex: none;
+  }
+  .list__item .archive__item-teaser img {
+    height: 180px;
+  }
+}
